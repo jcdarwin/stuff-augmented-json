@@ -10,7 +10,7 @@ function die(msg){
 }
 
 var app = new (require('express'))()
-var port = process.env.port || config.port
+var port = process.env.PORT || config.port
 var url = process.env.url || config.url;
 
 console.log('port: ' + port);
@@ -36,7 +36,7 @@ var polling = poll({
 		}
 	},
 	mtime: '',
-	interval: 6000,
+	interval: 60000,
 	file: file,
 	verbose: true
 });

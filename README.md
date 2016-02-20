@@ -5,7 +5,7 @@ augmenting it with the **most popular** information (viewed and shared).
 
 ## Installation
 
-		npm install
+	npm install
 
 ## Configuration
 
@@ -13,9 +13,26 @@ Refer config.json
 
 ## Usage
 
-		npm start
+	npm start
 
-To retrieve the augmented JSON, browse to http://localhost:9000
+To retrieve the augmented JSON, browse to http://localhost:5000
+
+## Deployment
+
+We use dokku, so deplyment is as easy as:
+
+	git remote add dokku dokku@dokku.mebooks.co.nz
+
+	git push dokku master
+
+Once deployed, we can visit our app at http://stuff-augmented-json.dokku.mebooks.co.nz/
+
+We can also find more information about our app on our dokku box:
+
+	ssh root@dokku.mebooks.co.nz
+	dokku
+	dokku logs stuff-augmented-json
+	ls -al /home/dokku/stuff-augmented-json
 
 ### How it works
 
