@@ -25,13 +25,29 @@ We use dokku, so deplyment is as easy as:
 
 	git push dokku master
 
+Note that dokku wil want us to serve our app on a specific port, so we need to
+check `process.env.PORT`.
+
 Once deployed, we can visit our app at http://stuff-augmented-json.dokku.mebooks.co.nz/
 
 We can also find more information about our app on our dokku box:
 
+	// ssh into the dokku box using PKA
 	ssh root@dokku.mebooks.co.nz
+
+	// display all dokku commands
 	dokku
+
+	// display our latest log messages (console.log) for our app
 	dokku logs stuff-augmented-json
+
+	// disable our app
+	dokku disable stuff-augmented-json
+
+	// enable our app
+	dokku enable stuff-augmented-json
+
+	// display the deployed app
 	ls -al /home/dokku/stuff-augmented-json
 
 ### How it works

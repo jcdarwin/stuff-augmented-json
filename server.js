@@ -56,6 +56,11 @@ app.get("/", function(req, res) {
 	}
 })
 
+app.get("/healthcheck", function(req, res) {
+	res.setHeader('Content-Type', 'text/html');
+	res.end('alive');
+})
+
 app.listen(port, function(error) {
 	if (error) {
 	  console.error(error)
