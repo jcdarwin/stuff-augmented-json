@@ -11,8 +11,11 @@ function die(msg){
 
 var app = new (require('express'))()
 var port = process.env.port || config.port
-
 var url = process.env.url || config.url;
+
+console.log('port: ' + port);
+console.log('url: ' + url);
+
 if (url.indexOf('http') == 0){
 	url = url.replace(/^.*\/\//, '');
 }
