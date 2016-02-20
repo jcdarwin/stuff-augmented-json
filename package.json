@@ -1,0 +1,16 @@
+{
+  "name": "stuff-news-munger",
+  "version": "1.0.0",
+  "description": "Provide an augmented form of the stuff json feed",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jason Darwin",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "express": "^4.13.3",
+    "q": "^1.4.1"
+  }
+}
