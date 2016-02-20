@@ -19,9 +19,9 @@ To retrieve the augmented JSON, browse to http://localhost:5000
 
 ## Deployment
 
-We use dokku, so deplyment is as easy as:
+We use dokku, so deployment is as easy as:
 
-	git remote add dokku dokku@dokku.mebooks.co.nz
+	git remote add dokku dokku@dokku.mebooks.co.nz:stuff-augmented-json
 
 	git push dokku master
 
