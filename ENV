@@ -1,0 +1,2 @@
+export port=80
+export url=http://www.stuff.co.nz/_json/?limit=50

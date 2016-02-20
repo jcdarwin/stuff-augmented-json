@@ -1,5 +1,5 @@
 {
-  "name": "stuff-news-munger",
+  "name": "stuff-augmented-json",
   "version": "1.0.0",
   "description": "Provide an augmented form of the stuff json feed",
   "main": "index.js",
