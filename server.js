@@ -45,10 +45,12 @@ app.get("/", function(req, res) {
 	// Have we got a cached version of the feed?
 	if (fs.statSync(path.join(__dirname, 'data/_json.json')).isFile()) {
 		res.setHeader('Content-Type', 'application/json');
+		res.header('Access-Control-Allow-Origin', '*');
 		res.sendFile(path.join(__dirname, 'data/_json.json'));
 	} else {
 		polling.then(function(){
 			res.setHeader('Content-Type', 'application/json');
+			res.header('Access-Control-Allow-Origin', '*');
 			res.sendFile(path.join(__dirname, 'data/_json.json'));
 		}, function(e){
 			die('Invalid response: ' + e);
