@@ -17,6 +17,11 @@ Refer config.json
 
 To retrieve the augmented JSON, browse to http://localhost:5000
 
+By default, we retrieve the maximum allowable number of stories (50).
+To retrieve a lower number of stories, supply a `limit` query parameter, e.g.
+
+http://localhost:9000/?limit=10
+
 ## Deployment
 
 We use dokku, so deployment is as easy as:

@@ -42,20 +42,46 @@ var polling = poll({
 });
 
 app.get("/", function(req, res) {
+
 	// Have we got a cached version of the feed?
-	if (fs.statSync(path.join(__dirname, 'data/_json.json')).isFile()) {
-		res.setHeader('Content-Type', 'application/json');
-		res.header('Access-Control-Allow-Origin', '*');
-		res.sendFile(path.join(__dirname, 'data/_json.json'));
-	} else {
+	try {
+		fs.access(path.join(__dirname, 'data/_json.json'), fs.F_OK, function(err) {
+			if (!err) {
+				res.setHeader('Content-Type', 'application/json');
+				res.header('Access-Control-Allow-Origin', '*');
+
+				fs.readFile(path.join(__dirname, 'data/_json.json'), function(err, data){
+					if (err) {
+						die('Error reading json: ' + e);
+					}
+
+					// Return only the number of stories requested
+					var limit = parseInt(req.query.limit);
+					if (limit) {
+						var j = JSON.parse(data);
+						j.stories.splice(limit);
+						j.popular.viewed.splice(limit);
+						j.popular.shared.splice(limit);
+						data = JSON.stringify(j);
+					}
+
+					res.end(data);
+				});
+
+			} else {
+			}
+		});
+	} catch(e) {
 		polling.then(function(){
 			res.setHeader('Content-Type', 'application/json');
 			res.header('Access-Control-Allow-Origin', '*');
 			res.sendFile(path.join(__dirname, 'data/_json.json'));
+			res.end();
 		}, function(e){
 			die('Invalid response: ' + e);
 		});
 	}
+
 })
 
 app.get("/healthcheck", function(req, res) {
