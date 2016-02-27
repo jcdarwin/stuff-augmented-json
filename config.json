@@ -1,5 +1,5 @@
 {
-	"port": 9000,
-	"url": "http://www.stuff.co.nz/_json/?limit=50",
-	"file": "data/_json.json"
+    "port": 9000,
+    "url": "http://www.stuff.co.nz/_json/?limit=50",
+    "file": "data/_json.json"
 }

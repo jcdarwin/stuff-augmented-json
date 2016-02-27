@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.20.0",
+    "compression": "^1.6.1",
     "express": "^4.13.3",
     "moment": "^2.11.2",
     "q": "^1.4.1"
